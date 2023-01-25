@@ -2,6 +2,13 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "Debug Windows",
+      "request": "launch",
+      "type": "reactnative",
+      "cwd": "${workspaceFolder}",
+      "platform": "windows"
+    },
+    {
       "name": "Attach to packager",
       "request": "attach",
       "type": "reactnative",
