@@ -5,6 +5,7 @@ module.exports = {
     es2022: true,
     node: true,
     es6: true,
+    "react-native/react-native": true,
   },
   extends: [
     "eslint:recommended",
@@ -56,7 +57,7 @@ module.exports = {
     },
   ],
 
-  plugins: ["@typescript-eslint", "react-hooks", "react"],
+  plugins: ["react", "react-hooks", "react-native", "@typescript-eslint"],
   rules: {
     "arrow-parens": ["error", "always"],
     camelcase: ["error", { properties: "always" }],
