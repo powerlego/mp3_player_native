@@ -1,6 +1,7 @@
 {
   "extends": "@tsconfig/react-native/tsconfig.json",
-  "include": ["src/**/*.ts", "src/**/*.tsx"],
+
+  "include": ["src"],
   "compilerOptions": {
     "target": "esnext",
     "module": "esnext",
@@ -14,12 +15,7 @@
     "noEmit": true,
     "baseUrl": "./",
     "incremental": true,
+    "rootDir": "./src",
     "lib": ["esnext", "ES6"]
-  },
-  "exclude": [
-    "node_modules",
-    "babel.config.js",
-    "metro.config.js",
-    "jest.config.js"
-  ]
+  }
 }

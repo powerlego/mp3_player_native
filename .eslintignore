@@ -1,5 +1,5 @@
 node_modules/
 *.config.js
 *.config.ts
+.eslintrc.js
 index.js
-index.ts
