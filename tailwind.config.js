@@ -3,7 +3,6 @@ const nativewind = require("nativewind/tailwind/native");
 module.exports = {
   darkMode: "class",
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
-  prefix: "tw-",
   theme: {
     extend: {
       minWidth: {
