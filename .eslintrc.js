@@ -11,14 +11,13 @@ module.exports = {
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
-    "@react-native-community",
   ],
 
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
     },
-    project: "./tsconfig.json",
+    project: "./tsconfig.eslint.json",
     sourceType: "module",
   },
   settings: {
@@ -43,17 +42,6 @@ module.exports = {
     {
       files: ["*.jsx"],
       parser: "@babel/eslint-parser",
-    },
-    {
-      files: ["*.{spec,test}.{js,ts,tsx}", "**/__{mocks,tests}__/**/*.{js,ts,tsx}"],
-      env: {
-        jest: true,
-        "jest/globals": true,
-      },
-      rules: {
-        "react-native/no-inline-styles": "off",
-        quotes: ["warn", "double", { avoidEscape: true, allowTemplateLiterals: true }],
-      },
     },
   ],
 

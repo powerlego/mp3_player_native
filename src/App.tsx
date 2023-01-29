@@ -5,47 +5,29 @@
  * @format
  */
 
-import React, { PropsWithChildren } from "react";
-import { SafeAreaView, ScrollView, StatusBar, Text, useColorScheme, View } from "react-native";
-import { DebugInstructions, Header, LearnMoreLinks, ReloadInstructions } from "react-native/Libraries/NewAppScreen";
-
-type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
-
-function Section({ children, title }: SectionProps): JSX.Element {
-  return (
-    <View className="mt-8 px-2">
-      <Text className="text-2xl text-black dark:text-white">{title}</Text>
-      <Text className="mt-2 text-lg text-black dark:text-white">{children}</Text>
-    </View>
-  );
-}
+import React from "react";
+import MainWindow from "./components/MainWindow";
+import { SafeAreaView, Text, View } from "react-native";
+import Sidebar from "./components/Sidebar";
+import MediaControlsBar from "./components/MediaControlsBar";
 
 function App(): JSX.Element {
-  const isDarkMode = useColorScheme() === "dark";
-
-  const backgroundStyle = "bg-neutral-300 dark:bg-slate-900";
-
   return (
-    <SafeAreaView className={backgroundStyle}>
-      <StatusBar barStyle={isDarkMode ? "light-content" : "dark-content"} />
-      <ScrollView className={backgroundStyle} contentInsetAdjustmentBehavior="automatic">
-        <Header />
-        <View className="bg-white dark:bg-black">
-          <Section title="Step One">
-            Edit <Text className="font-bold">App.tsx</Text> to change this screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">Read the docs to discover what to do next:</Section>
-          <LearnMoreLinks />
+    <SafeAreaView className="web:overflow-y-hidden overflow-hidden flex-[4]">
+      <View className="flex-row flex-shrink">
+        {/*Should be a drawer for mobile devices*/}
+        <Sidebar className="z-20 m-0 w-56 bg-gray-200 text-gray-800 dark:bg-gray-800 dark:text-white">
+          <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod</Text>
+          <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod</Text>
+        </Sidebar>
+        <View className="h-full w-full bg-gray-300 dark:bg-gray-700 flex-[3] overflow-hidden">
+          <MainWindow className="relative flex flex-col h-full w-full bg-gray-300 dark:bg-gray-700" />
         </View>
-      </ScrollView>
+      </View>
+      <MediaControlsBar
+        className="absolute bottom-0 left-0 z-30 h-[90px] w-full bg-gray-350 dark:bg-gray-750 px-4 min-h-[90px]"
+        src="HelloWorld"
+      />
     </SafeAreaView>
   );
 }
